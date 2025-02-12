@@ -2,10 +2,17 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.4.2'
 	id 'io.spring.dependency-management' version '1.1.7'
+	id 'io.freefair.lombok' version "8.12.1"
 }
 
 group = 'ru.yandex.practicum'
-version = '0.0.1-SNAPSHOT'
+version = '2.0.0-SNAPSHOT'
+
+repositories {
+	mavenCentral()
+	mavenLocal()
+}
+
 
 java {
 	toolchain {
@@ -13,8 +20,10 @@ java {
 	}
 }
 
-repositories {
-	mavenCentral()
+tasks.withType(JavaCompile).configureEach {
+	options.compilerArgs = [
+			'-Amapstruct.defaultComponentModel=spring'
+	]
 }
 
 dependencies {
@@ -28,6 +37,9 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.6.3'
+	annotationProcessor 'org.projectlombok:lombok'
 }
 
 tasks.named('test') {
