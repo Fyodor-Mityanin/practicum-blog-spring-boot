@@ -94,22 +94,6 @@ class PostControllerIntegrationTest {
 
     @Test
     @Sql("sql/posts.sql")
-    void addComment_shouldAddComment() throws Exception {
-        mockMvc.perform(post("/blog/post/2/comment")
-                        .param("text", "texteext")
-                )
-                .andExpect(status().is3xxRedirection());
-    }
-
-    @Test
-    @Sql({"sql/posts.sql", "sql/comments.sql"})
-    void deleteComment_shouldDeleteComment() throws Exception {
-        mockMvc.perform(delete("/blog/post/2/comment/2"))
-                .andExpect(status().isOk());
-    }
-
-    @Test
-    @Sql("sql/posts.sql")
     void likePost_shouldLikePost() throws Exception {
         mockMvc.perform(get("/blog/post/2/like"))
                 .andExpect(status().isOk());
