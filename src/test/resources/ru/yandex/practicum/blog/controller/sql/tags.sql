@@ -1,0 +1,11 @@
+DELETE FROM tags;
+INSERT INTO tags (id, name) VALUES (101, 'Природа');
+INSERT INTO tags (id, name) VALUES (102, 'Город');
+INSERT INTO tags (id, name) VALUES (103, 'Животные');
+INSERT INTO tags (id, name) VALUES (104, 'aaasds');
+INSERT INTO tags (id, name) VALUES (10105, 'qwe');
+INSERT INTO tags (id, name) VALUES (106, 'cccc');
+INSERT INTO tags (id, name) VALUES (107, 'ntu2');
+INSERT INTO tags (id, name) VALUES (108, 'тег1');
+INSERT INTO tags (id, name) VALUES (109, 'тег2');
+INSERT INTO tags (id, name) VALUES (110, 'fffff');
